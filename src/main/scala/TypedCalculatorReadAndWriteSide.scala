@@ -135,24 +135,21 @@ object akka_typed
         x
       }
       .runForeach { event =>
-      event.event match {
-        case Added(_, amount) =>
-//          println(s"!Before Log from Added: $latestCalculatedResult")
-          latestCalculatedResult += amount
-          updateResultAndOfsset(latestCalculatedResult, event.sequenceNr)
-          println(s"! Log from Added: $latestCalculatedResult")
-        case Multiplied(_, amount) =>
-//          println(s"!Before Log from Multiplied: $latestCalculatedResult")
-          latestCalculatedResult *= amount
-          updateResultAndOfsset(latestCalculatedResult, event.sequenceNr)
-          println(s"! Log from Multiplied: $latestCalculatedResult")
-        case Divided(_, amount) =>
-//          println(s"! Log from Divided before: $latestCalculatedResult")
-          latestCalculatedResult /= amount
-          updateResultAndOfsset(latestCalculatedResult, event.sequenceNr)
-          println(s"! Log from Divided: $latestCalculatedResult")
+        event.event match {
+          case Added(_, amount) =>
+            //          println(s"!Before Log from Added: $latestCalculatedResult")
+            updateResultAndOfsset(latestCalculatedResult, event.sequenceNr)
+            println(s"! Log from Added: $latestCalculatedResult")
+          case Multiplied(_, amount) =>
+            //          println(s"!Before Log from Multiplied: $latestCalculatedResult")
+            updateResultAndOfsset(latestCalculatedResult, event.sequenceNr)
+            println(s"! Log from Multiplied: $latestCalculatedResult")
+          case Divided(_, amount) =>
+            //          println(s"! Log from Divided before: $latestCalculatedResult")
+            updateResultAndOfsset(latestCalculatedResult, event.sequenceNr)
+            println(s"! Log from Divided: $latestCalculatedResult")
+        }
       }
-    }
   }
 
   object CalculatorRepository {
@@ -192,17 +189,9 @@ object akka_typed
       writeActorRef ! Add(10)
       writeActorRef ! Multiply(2)
       writeActorRef ! Divide(5)
-//
-      (1 to 1000).foreach{ x =>
-        writeActorRef ! Add(10)
-      }
-//
-
-
       // 0 + 10 = 10
       // 10 * 2 = 20
       // 20 / 5 = 4
-
       Behaviors.same
     }
 
@@ -211,7 +200,7 @@ object akka_typed
     val value = akka_typed()
     implicit val system: ActorSystem[NotUsed] = ActorSystem(value, "akka_typed")
 
-//    TypedCalculatorReadSide(system)
+    TypedCalculatorReadSide(system)
 
     implicit val executionContext = system.executionContext
   }

@@ -28,26 +28,30 @@
     <orderEntry type="library" name="sbt: com.github.jnr:jnr-x86asm:1.0.2:jar" level="project" />
     <orderEntry type="library" name="sbt: com.github.stephenc.jcip:jcip-annotations:1.0-1:jar" level="project" />
     <orderEntry type="library" name="sbt: com.google.guava:guava:16.0.1:jar" level="project" />
-    <orderEntry type="library" name="sbt: com.hierynomus:asn-one:0.4.0:jar" level="project" />
+    <orderEntry type="library" name="sbt: com.hierynomus:asn-one:0.5.0:jar" level="project" />
     <orderEntry type="library" name="sbt: com.lightbend.akka:akka-stream-alpakka-cassandra_2.13:2.0.2:jar" level="project" />
-    <orderEntry type="library" name="sbt: com.typesafe.akka:akka-actor-typed_2.13:2.6.9:jar" level="project" />
-    <orderEntry type="library" name="sbt: com.typesafe.akka:akka-actor_2.13:2.6.9:jar" level="project" />
-    <orderEntry type="library" name="sbt: com.typesafe.akka:akka-cluster-tools_2.13:2.6.9:jar" level="project" />
-    <orderEntry type="library" name="sbt: com.typesafe.akka:akka-cluster_2.13:2.6.9:jar" level="project" />
-    <orderEntry type="library" name="sbt: com.typesafe.akka:akka-coordination_2.13:2.6.9:jar" level="project" />
+    <orderEntry type="library" name="sbt: com.lightbend.akka:akka-stream-alpakka-slick_2.13:3.0.4:jar" level="project" />
+    <orderEntry type="library" name="sbt: com.typesafe.akka:akka-actor-typed_2.13:2.6.14:jar" level="project" />
+    <orderEntry type="library" name="sbt: com.typesafe.akka:akka-actor_2.13:2.6.14:jar" level="project" />
+    <orderEntry type="library" name="sbt: com.typesafe.akka:akka-cluster-tools_2.13:2.6.14:jar" level="project" />
+    <orderEntry type="library" name="sbt: com.typesafe.akka:akka-cluster_2.13:2.6.14:jar" level="project" />
+    <orderEntry type="library" name="sbt: com.typesafe.akka:akka-coordination_2.13:2.6.14:jar" level="project" />
     <orderEntry type="library" name="sbt: com.typesafe.akka:akka-persistence-cassandra-launcher_2.13:1.0.5:jar" level="project" />
     <orderEntry type="library" name="sbt: com.typesafe.akka:akka-persistence-cassandra_2.13:1.0.5:jar" level="project" />
-    <orderEntry type="library" name="sbt: com.typesafe.akka:akka-persistence-query_2.13:2.6.9:jar" level="project" />
-    <orderEntry type="library" name="sbt: com.typesafe.akka:akka-persistence-typed_2.13:2.6.9:jar" level="project" />
-    <orderEntry type="library" name="sbt: com.typesafe.akka:akka-persistence_2.13:2.6.9:jar" level="project" />
-    <orderEntry type="library" name="sbt: com.typesafe.akka:akka-pki_2.13:2.6.9:jar" level="project" />
-    <orderEntry type="library" name="sbt: com.typesafe.akka:akka-protobuf-v3_2.13:2.6.9:jar" level="project" />
-    <orderEntry type="library" name="sbt: com.typesafe.akka:akka-remote_2.13:2.6.9:jar" level="project" />
-    <orderEntry type="library" name="sbt: com.typesafe.akka:akka-slf4j_2.13:2.6.9:jar" level="project" />
-    <orderEntry type="library" name="sbt: com.typesafe.akka:akka-stream-typed_2.13:2.6.9:jar" level="project" />
-    <orderEntry type="library" name="sbt: com.typesafe.akka:akka-stream_2.13:2.6.9:jar" level="project" />
+    <orderEntry type="library" name="sbt: com.typesafe.akka:akka-persistence-query_2.13:2.6.14:jar" level="project" />
+    <orderEntry type="library" name="sbt: com.typesafe.akka:akka-persistence-typed_2.13:2.6.14:jar" level="project" />
+    <orderEntry type="library" name="sbt: com.typesafe.akka:akka-persistence_2.13:2.6.14:jar" level="project" />
+    <orderEntry type="library" name="sbt: com.typesafe.akka:akka-pki_2.13:2.6.14:jar" level="project" />
+    <orderEntry type="library" name="sbt: com.typesafe.akka:akka-protobuf-v3_2.13:2.6.14:jar" level="project" />
+    <orderEntry type="library" name="sbt: com.typesafe.akka:akka-remote_2.13:2.6.14:jar" level="project" />
+    <orderEntry type="library" name="sbt: com.typesafe.akka:akka-slf4j_2.13:2.6.14:jar" level="project" />
+    <orderEntry type="library" name="sbt: com.typesafe.akka:akka-stream-typed_2.13:2.6.14:jar" level="project" />
+    <orderEntry type="library" name="sbt: com.typesafe.akka:akka-stream_2.13:2.6.14:jar" level="project" />
+    <orderEntry type="library" name="sbt: com.typesafe.slick:slick-hikaricp_2.13:3.3.3:jar" level="project" />
+    <orderEntry type="library" name="sbt: com.typesafe.slick:slick_2.13:3.3.3:jar" level="project" />
     <orderEntry type="library" name="sbt: com.typesafe:config:1.4.0:jar" level="project" />
     <orderEntry type="library" name="sbt: com.typesafe:ssl-config-core_2.13:0.4.2:jar" level="project" />
+    <orderEntry type="library" name="sbt: com.zaxxer:HikariCP:3.2.0:jar" level="project" />
     <orderEntry type="library" name="sbt: commons-logging:commons-logging:1.2:jar" level="project" />
     <orderEntry type="library" name="sbt: io.dropwizard.metrics:metrics-core:4.0.5:jar" level="project" />
     <orderEntry type="library" name="sbt: io.netty:netty-buffer:4.1.52.Final:jar" level="project" />
@@ -56,7 +60,7 @@
     <orderEntry type="library" name="sbt: io.netty:netty-handler:4.1.52.Final:jar" level="project" />
     <orderEntry type="library" name="sbt: io.netty:netty-resolver:4.1.52.Final:jar" level="project" />
     <orderEntry type="library" name="sbt: io.netty:netty-transport:4.1.52.Final:jar" level="project" />
-    <orderEntry type="library" name="sbt: org.agrona:agrona:1.4.1:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.agrona:agrona:1.9.0:jar" level="project" />
     <orderEntry type="library" name="sbt: org.apache.commons:commons-dbcp2:2.7.0:jar" level="project" />
     <orderEntry type="library" name="sbt: org.apache.commons:commons-pool2:2.7.0:jar" level="project" />
     <orderEntry type="library" name="sbt: org.fusesource.leveldbjni:leveldbjni-all:1.8:jar" level="project" />

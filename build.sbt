@@ -3,7 +3,7 @@ name := "cqs-akka"
 version := "0.1"
 
 scalaVersion := "2.13.3"
-lazy val akkaVersion       = "2.6.9"
+lazy val akkaVersion       = "2.6.14"
 lazy val leveldbVersion    = "0.7"
 lazy val leveldbjniVersion = "1.8"
 lazy val postgresVersion   = "42.2.2"
@@ -30,8 +30,14 @@ libraryDependencies ++= Seq(
 
   //  local levelDB stores
   "org.iq80.leveldb"          % "leveldb"        % leveldbVersion,
-  "org.fusesource.leveldbjni" % "leveldbjni-all" % leveldbjniVersion
+  "org.fusesource.leveldbjni" % "leveldbjni-all" % leveldbjniVersion,
 
+  "com.lightbend.akka" %% "akka-stream-alpakka-slick" % "3.0.4",
+  "com.typesafe.akka" %% "akka-stream" % akkaVersion,
+
+  "com.typesafe.akka" %% "akka-coordination" % akkaVersion,
+  "com.typesafe.akka" %% "akka-cluster" % akkaVersion,
+  "com.typesafe.akka" %% "akka-cluster-tools" % akkaVersion
 )
 
 libraryDependencies += "com.typesafe"   % "config"          % "1.4.0"
