@@ -42,20 +42,20 @@ object  akka_typed{
 
 
     def handleCommand(
-                     persistenceId: String,
-                     state: State,
-                     command: Command,
-                     ctx: ActorContext[Command]
+                       persistenceId: String,
+                       state: State,
+                       command: Command,
+                       ctx: ActorContext[Command]
                      ): Effect[Event, State] =
       command match {
         case Add(amount) =>
           ctx.log.info(s"receive adding  for number: $amount and state is ${state.value}")
           val added = Added(persistenceId.toInt, amount)
           Effect
-          .persist(added)
-          .thenRun{
-            x=> ctx.log.info(s"The state result is ${x.value}")
-          }
+            .persist(added)
+            .thenRun{
+              x=> ctx.log.info(s"The state result is ${x.value}")
+            }
         case Multiply(amount) =>
           ctx.log.info(s"receive multiplying  for number: $amount and state is ${state.value}")
           val multiplied = Multiplied(persistenceId.toInt, amount)
@@ -130,45 +130,45 @@ object  akka_typed{
 
 
     val source: Source[EventEnvelope, NotUsed] = readJournal.eventsByPersistenceId("001", startOffset, Long.MaxValue)
-/*
-  // momework, spoiler
-    def updateState(event: Any, seqNum: Long): Result ={
-      val newStste = event match {
-        case Added(_amount)=>
-          ???
-        case Multiplied(_,amount)=>
-          ???
-        case Divided(_amount)=>
-          ???
-      }
-      Result(newState, seqNum)
-    }
+    /*
+      // momework, spoiler
+        def updateState(event: Any, seqNum: Long): Result ={
+          val newStste = event match {
+            case Added(_amount)=>
+              ???
+            case Multiplied(_,amount)=>
+              ???
+            case Divided(_amount)=>
+              ???
+          }
+          Result(newState, seqNum)
+        }
 
-    val graph = GraphDSL.create(){
-      implicit builder: GraphDSL.Builder[NotUsed] =>
-        //1.
-        val input = builder.add(source)
-        val stateUpdater = builder.add(Flow[EventEnvelope].map(e=> updateState(e.event, e.sequenceNr)))
-        val localSaveOutput = builder.add(Sink.foreach[Result]{
-          r=>
-            latestCalculatedResult = r.state
-            println("something to print")
-        })
+        val graph = GraphDSL.create(){
+          implicit builder: GraphDSL.Builder[NotUsed] =>
+            //1.
+            val input = builder.add(source)
+            val stateUpdater = builder.add(Flow[EventEnvelope].map(e=> updateState(e.event, e.sequenceNr)))
+            val localSaveOutput = builder.add(Sink.foreach[Result]{
+              r=>
+                latestCalculatedResult = r.state
+                println("something to print")
+            })
 
-        val dbSaveOutput = builder.add(
-          Slick.sink[Result](r=> updatedResultAndOffset(r))
-        )
+            val dbSaveOutput = builder.add(
+              Slick.sink[Result](r=> updatedResultAndOffset(r))
+            )
 
-        // надо разделить builder на 2  c помощью Broadcats
-        //см https://blog.rockthejvm.com/akka-streams-graphs/
+            // надо разделить builder на 2  c помощью Broadcats
+            //см https://blog.rockthejvm.com/akka-streams-graphs/
 
-        //надо будет сохранить flow(разделенный на 2) в localSaveOutput и dbSaveOutput
-        //в конце закрыть граф и запустить его RunnableGraph.fromGraph(graph).run()
-
-
+            //надо будет сохранить flow(разделенный на 2) в localSaveOutput и dbSaveOutput
+            //в конце закрыть граф и запустить его RunnableGraph.fromGraph(graph).run()
 
 
-    }*/
+
+
+        }*/
 
     source
       .map{x =>
@@ -198,9 +198,9 @@ object  akka_typed{
 
     //homework how to do
     //1.
-/*    def createSession(): SlickSession ={
-      //создайте сессию согласно документации
-    }*/
+    /*    def createSession(): SlickSession ={
+          //создайте сессию согласно документации
+        }*/
 
 
 
@@ -213,14 +213,14 @@ object  akka_typed{
 
     // homework
     // case class Result(state: Double, offset:Long)
-/*    def getLatestsOffsetAndResult: Result ={
-      val query = sql"select * from public.result where id = 1;"
-        .as[Double]
-        .headOption
-      //надо создать future для db.run
-      //с помошью await получите результат или прокиньте ошибку если результат нет
+    /*    def getLatestsOffsetAndResult: Result ={
+          val query = sql"select * from public.result where id = 1;"
+            .as[Double]
+            .headOption
+          //надо создать future для db.run
+          //с помошью await получите результат или прокиньте ошибку если результат нет
 
-    }*/
+        }*/
 
 
     def getLatestsOffsetAndResult: (Int, Double) ={
